@@ -1,0 +1,52 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsVentaAleatoria
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venta Aleatoria</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Venta Aleatoria</h1>
+
+        @if (Model.random >= 300 && Model.random <= 500)
+        {
+            Model.total = Model.monto - (Model.monto * 0.2);
+            Model.descuento = (Model.monto * 0.2);
+        }
+        else if (Model.random >= 100 && Model.random < 300)
+        {
+            Model.total = Model.monto - (Model.monto * 0.1);
+            Model.descuento = (Model.monto * 0.1);
+        }
+        else
+        {
+            Model.total = Model.monto;
+            Model.descuento = 0;
+        }
+
+        <div class="result-item">
+            <label>Valor Aleatorio:</label>
+            <span>@Model.random</span>
+        </div>
+        <div class="result-item">
+            <label>Monto de Compra:</label>
+            <span>@Model.monto</span>
+        </div>
+        <div class="result-item">
+            <label>Descuento:</label>
+            <span>@Model.descuento</span>
+        </div>
+        <div class="result-item total">
+            <label>Total:</label>
+            <span>@Model.total</span>
+        </div>
+    </div>
+</body>
+</html>

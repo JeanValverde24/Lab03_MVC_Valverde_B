@@ -1,0 +1,27 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsTabla
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Tabla de Multiplicar</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Generar Tabla de Multiplicar</h1>
+        @using (Html.BeginForm("GenerarTabla", "Tabla", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.numero, "Ingrese Número:")
+                @Html.EditorFor(model => model.numero)
+            </div>
+            <input type="submit" value="Generar" />
+        }
+    </div>
+</body>
+</html>

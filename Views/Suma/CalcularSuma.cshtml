@@ -1,0 +1,32 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsSuma
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado de la Suma</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado de la Suma</h1>
+        <div class="result">
+            <p><label>Valor 1:</label> @Model.valor1</p>
+            <p><label>Valor 2:</label> @Model.valor2</p>
+            <p><label>Resultado:</label> @Model.resultado</p>
+        </div>
+        <a href="Index" class="back-link">Volver al formulario</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Página de resultados cargada.');
+            // Example alert can be removed if not needed
+            // alert('Resultado calculado.');
+        });
+    </script>
+</body>
+</html>

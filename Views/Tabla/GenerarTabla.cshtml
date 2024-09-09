@@ -1,0 +1,38 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsTabla
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Tabla de Multiplicar</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Tabla de Multiplicar</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Operación</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i <= 12; i++)
+                {
+                    var result = Model.numero * i;
+                    <tr>
+                        <td>@Model.numero X @i</td>
+                        <td>@result</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

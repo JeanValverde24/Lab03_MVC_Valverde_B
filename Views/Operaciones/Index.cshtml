@@ -1,0 +1,49 @@
+﻿@model Lab03_Mvc_Valverde_B.Models.ClsOperaciones
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operaciones Aritméticas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Operaciones Aritméticas</h1>
+        @using (Html.BeginForm("CalcularOperaciones", "Operaciones", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor1, "Valor 1:")
+                @Html.EditorFor(model => model.valor1, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor2, "Valor 2:")
+                @Html.EditorFor(model => model.valor2, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Tipo:")
+                @Html.DropDownListFor(model => model.tipo, new SelectList(
+                    new List<object>
+                    {
+                        new { value = "S", text = "Suma" },
+                        new { value = "R", text = "Resta" },
+                        new { value = "M", text = "Multiplicación" },
+                        new { value = "D", text = "División" }
+                    },
+                    "value",
+                    "text",
+                    2
+                ), new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Calcular" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</body>
+</html>

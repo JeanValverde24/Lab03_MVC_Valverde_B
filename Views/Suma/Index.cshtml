@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suma de 2 Números</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Suma de 2 Números</h1>
+        <form name="frsuma" action="CalcularSuma" method="post">
+            <div class="form-group">
+                <label for="numero1">Ingrese A:</label>
+                <input type="text" id="numero1" name="numero1" required />
+            </div>
+            <div class="form-group">
+                <label for="numero2">Ingrese B:</label>
+                <input type="text" id="numero2" name="numero2" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calcular" />
+            </div>
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            if (!numero1 || isNaN(numero1) || !numero2 || isNaN(numero2)) {
+                alert('Por favor, ingrese números válidos en ambos campos.');
+                event.preventDefault(); // Previene el envío del formulario si la validación falla
+            }
+        });
+    </script>
+</body>
+</html>
+

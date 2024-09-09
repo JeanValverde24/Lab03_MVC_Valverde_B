@@ -1,0 +1,35 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsOperaciones
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado de Operaciones</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Operaciones Aritméticas</h1>
+        <div class="result-item">
+            <label>Numero 1:</label>
+            <span>@Model.valor1</span>
+        </div>
+        <div class="result-item">
+            <label>Numero 2:</label>
+            <span>@Model.valor2</span>
+        </div>
+        <div class="result-item">
+            <label>Operación:</label>
+            <span>@Model.tipo</span>
+        </div>
+        <div class="result-item result">
+            <label>Resultado:</label>
+            <span>@Model.resultado</span>
+        </div>
+    </div>
+</body>
+</html>

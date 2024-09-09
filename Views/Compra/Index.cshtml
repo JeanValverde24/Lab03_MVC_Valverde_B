@@ -1,0 +1,27 @@
+﻿@model Lab03_MVC_Jarro_B.Models.ClsVentaAleatoria
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venta Aleatoria</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Venta Aleatoria</h1>
+        @using (Html.BeginForm("CalcularCompra", "Compra", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.Label("Ingrese Monto de Compra:")
+                @Html.EditorFor(model => model.monto)
+            </div>
+            <input type="submit" value="Calcular" />
+        }
+    </div>
+</body>
+</html>
